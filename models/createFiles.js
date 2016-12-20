@@ -41,7 +41,7 @@ class FileSystem{
         console.log("");
         console.log("cd %s and install npm", programName.substring(2));
         console.log("");
-        console.log("Run the program using DEBUG=%s ", programName.substring(2));
+        console.log("Run the program using node app.js");
         console.log("");
     }
 }

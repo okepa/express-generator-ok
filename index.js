@@ -8,7 +8,7 @@ let pkg = require('./package.json');
 let fileSystem = require('./models/createFiles');
 
 program
-    .usage('[nameUsage]', '[dir]')
+    .usage('[nameUsage]')
     .option('-n, --name [nam]', 'Project name' )
     .parse(process.argv);
 
@@ -35,12 +35,10 @@ let app = fileSystem.loadFileTemplate('/app.js');
 let index = fileSystem.loadFileTemplate('/views/index.ejs');
 let indexController = fileSystem.loadFileTemplate('/controllers/indexController.js');
 let routes = fileSystem.loadFileTemplate('/routes/routes.js');
-let jquery = fileSystem.loadFileTemplate('/public/js/jquery-3.1.1.min.js');
 let jsNonMinified = fileSystem.loadFileTemplate('/public/js/materialize.js');
 let jsMinified = fileSystem.loadFileTemplate('/public/js/materialize.min.js');
 let cssNonMinified = fileSystem.loadFileTemplate('/public/css/materialize.css');
 let cssMinified = fileSystem.loadFileTemplate('/public/css/materialize.min.css');
-
 
 // Create the package.json
 let package = {
@@ -61,7 +59,6 @@ fileSystem.createFileFromTemplates(programName + '/app.js', app);
 fileSystem.createFileFromTemplates(programName + '/views/index.ejs', index);
 fileSystem.createFileFromTemplates(programName + '/controllers/indexController.js', indexController);
 fileSystem.createFileFromTemplates(programName + '/routes/routes.js', routes);
-fileSystem.createFileFromTemplates(programName + '/public/js/jquery-3.1.1.min.js', jquery);
 fileSystem.createFileFromTemplates(programName + '/public/js/materialize.js', jsNonMinified);
 fileSystem.createFileFromTemplates(programName + '/public/js/materialize.min.js', jsMinified);
 fileSystem.createFileFromTemplates(programName + '/public/css/materialize.css', cssNonMinified);
@@ -69,7 +66,7 @@ fileSystem.createFileFromTemplates(programName + '/public/css/materialize.min.cs
 
 fileSystem.createFileFromTemplates(programName + '/package.json', JSON.stringify(package, null, 2) + '\n');
 
-//print out instructions for what do do after ejs-o
+//print out instructions for what do do after ejs-o -n <name>
 fileSystem.instructions(programName);
 
 

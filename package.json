@@ -1,5 +1,5 @@
 {
-  "name": "express-generator-ejs",
+  "name": "express-generator-ok",
   "version": "1.0.0",
   "description": "Express application generator",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "author": "Aleksander Kepa",
   "license": "ISC",
   "bin": {
-    "ejs-o": "./index.js"
+    "gen-ok": "./index.js"
   },
   "dependencies": {
     "commander": "^2.9.0"
