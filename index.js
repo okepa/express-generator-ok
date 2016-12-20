@@ -25,28 +25,13 @@ fileSystem.createFolders(programName, true);
 
 //create the express template folders
 for(let i in folderArray){
-    fileSystem.createFolders(programName, false, i);
+    fileSystem.createFolders(programName, false, folderArray[i]);
 }
-// fileSystem.createFolders(programName, false, '/lib');
-// fileSystem.createFolders(programName, false, '/routes');
-// fileSystem.createFolders(programName, false, '/views');
-// fileSystem.createFolders(programName, false, '/controllers');
-// fileSystem.createFolders(programName, false, '/models');
-// fileSystem.createFolders(programName, false, '/public');
-// fileSystem.createFolders(programName, false, '/public/js');
-// fileSystem.createFolders(programName, false, '/public/css');
-// fileSystem.createFolders(programName, false, '/public/font');
-// fileSystem.createFolders(programName, false, '/public/image');
 
 //Get the files I want to import from the templates folder using readFileSync
-for(let i in folderArray){
-
+for(let i in rArray){
+    wArray[i] = fileSystem.loadFileTemplate(rArray[i]);
 }
-let app = fileSystem.loadFileTemplate('/app.js');
-let index = fileSystem.loadFileTemplate('/views/index.ejs');
-let indexController = fileSystem.loadFileTemplate('/controllers/indexController.js');
-let routes = fileSystem.loadFileTemplate('/routes/routes.js');
-let procFile = fileSystem.loadFileTemplate('/Procfile');
 
 // Create the package.json
 let package = {
@@ -63,12 +48,13 @@ let package = {
 }
 
 //create files using writeFileSync
-fileSystem.createFileFromTemplates(programName + '/app.js', app);
-fileSystem.createFileFromTemplates(programName + '/views/index.ejs', index);
-fileSystem.createFileFromTemplates(programName + '/controllers/indexController.js', indexController);
-fileSystem.createFileFromTemplates(programName + '/routes/routes.js', routes);
-fileSystem.createFileFromTemplates(programName + '/Procfile', procFile);
-
+for(let i in rArray){
+    for(let j in wArray){
+        if(i == j){
+            fileSystem.createFileFromTemplates(programName + rArray[i], wArray[j]);
+        }
+    }
+}
 fileSystem.createFileFromTemplates(programName + '/package.json', JSON.stringify(package, null, 2) + '\n');
 
 //print out instructions for what do do after ejs-o -n <name>

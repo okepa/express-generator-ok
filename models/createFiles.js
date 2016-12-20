@@ -19,7 +19,7 @@ class FileSystem{
         } else if(!start) {
 
             fs.mkdirSync(programName + folder);
-            console.log("Created : " + folder);                    
+            console.log("Created : " + programName.substring(1) + folder);                    
         }
 
         else{
@@ -39,9 +39,11 @@ class FileSystem{
     static instructions(programName) {
 
         console.log("");
-        console.log("cd %s and npm install", programName.substring(2));
+        console.log("Instructions: cd %s", programName.substring(2));
         console.log("");
-        console.log("Run the program using node app.js");
+        console.log("Instructions: npm install");
+        console.log("");
+        console.log("Instructions: Run the program using node app.js");
         console.log("");
     }
 }
