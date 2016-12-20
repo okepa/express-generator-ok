@@ -8,7 +8,7 @@ $ npm install express-generator -g
 
 ## Run Application
 
-Choose the <name> of your project and create it using:   
+Choose the name of your project and create it using:   
 
 ```bash
 $ gen-ok -n <name>
