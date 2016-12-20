@@ -11,6 +11,7 @@ let fileSystem = require('./models/createFiles');
 let folderArray = ['/lib', '/routes', '/views', '/controllers', '/models', '/public', '/public/js', '/public/css', '/public/font', '/public/image'];
 let rArray = ['/app.js', '/views/index.ejs', '/controllers/indexController.js', '/routes/routes.js', '/Procfile'];
 let wArray = [];
+
 program
     .usage('<Project Name>')
     .option('-n, --name [name]', 'Project name' )
