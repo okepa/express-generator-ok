@@ -4,17 +4,16 @@ let program = require ('commander');
 let fs = require('fs');
 let path = require('path');
 let pkg = require('./package.json');
-
+//require function file
 let fileSystem = require('./models/createFiles');
 
+//Arrays for the folders and files
 let folderArray = ['/lib', '/routes', '/views', '/controllers', '/models', '/public', '/public/js', '/public/css', '/public/font', '/public/image'];
-
 let rArray = ['/app.js', '/views/index.ejs', '/controllers/indexController.js', '/routes/routes.js', '/Procfile'];
-
 let wArray = [];
 program
-    .usage('[nameUsage]')
-    .option('-n, --name [nam]', 'Project name' )
+    .usage('<Project Name>')
+    .option('-n, --name [name]', 'Project name' )
     .parse(process.argv);
 
 //get the name of the directory
