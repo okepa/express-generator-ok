@@ -7,6 +7,11 @@ let pkg = require('./package.json');
 
 let fileSystem = require('./models/createFiles');
 
+let folderArray = ['/lib', '/routes', '/views', '/controllers', '/models', '/public', '/public/js', '/public/css', '/public/font', '/public/image'];
+
+let rArray = ['/app.js', '/views/index.ejs', '/controllers/indexController.js', '/routes/routes.js', '/Procfile'];
+
+let wArray = [];
 program
     .usage('[nameUsage]')
     .option('-n, --name [nam]', 'Project name' )
@@ -19,26 +24,29 @@ let programName = './' + program.name;
 fileSystem.createFolders(programName, true);
 
 //create the express template folders
-fileSystem.createFolders(programName, false, '/lib');
-fileSystem.createFolders(programName, false, '/routes');
-fileSystem.createFolders(programName, false, '/views');
-fileSystem.createFolders(programName, false, '/controllers');
-fileSystem.createFolders(programName, false, '/models');
-fileSystem.createFolders(programName, false, '/public');
-fileSystem.createFolders(programName, false, '/public/js');
-fileSystem.createFolders(programName, false, '/public/css');
-fileSystem.createFolders(programName, false, '/public/font');
-fileSystem.createFolders(programName, false, '/public/image');
+for(let i in folderArray){
+    fileSystem.createFolders(programName, false, i);
+}
+// fileSystem.createFolders(programName, false, '/lib');
+// fileSystem.createFolders(programName, false, '/routes');
+// fileSystem.createFolders(programName, false, '/views');
+// fileSystem.createFolders(programName, false, '/controllers');
+// fileSystem.createFolders(programName, false, '/models');
+// fileSystem.createFolders(programName, false, '/public');
+// fileSystem.createFolders(programName, false, '/public/js');
+// fileSystem.createFolders(programName, false, '/public/css');
+// fileSystem.createFolders(programName, false, '/public/font');
+// fileSystem.createFolders(programName, false, '/public/image');
 
 //Get the files I want to import from the templates folder using readFileSync
+for(let i in folderArray){
+
+}
 let app = fileSystem.loadFileTemplate('/app.js');
 let index = fileSystem.loadFileTemplate('/views/index.ejs');
 let indexController = fileSystem.loadFileTemplate('/controllers/indexController.js');
 let routes = fileSystem.loadFileTemplate('/routes/routes.js');
-let jsNonMinified = fileSystem.loadFileTemplate('/public/js/materialize.js');
-let jsMinified = fileSystem.loadFileTemplate('/public/js/materialize.min.js');
-let cssNonMinified = fileSystem.loadFileTemplate('/public/css/materialize.css');
-let cssMinified = fileSystem.loadFileTemplate('/public/css/materialize.min.css');
+let procFile = fileSystem.loadFileTemplate('/Procfile');
 
 // Create the package.json
 let package = {
@@ -59,10 +67,7 @@ fileSystem.createFileFromTemplates(programName + '/app.js', app);
 fileSystem.createFileFromTemplates(programName + '/views/index.ejs', index);
 fileSystem.createFileFromTemplates(programName + '/controllers/indexController.js', indexController);
 fileSystem.createFileFromTemplates(programName + '/routes/routes.js', routes);
-fileSystem.createFileFromTemplates(programName + '/public/js/materialize.js', jsNonMinified);
-fileSystem.createFileFromTemplates(programName + '/public/js/materialize.min.js', jsMinified);
-fileSystem.createFileFromTemplates(programName + '/public/css/materialize.css', cssNonMinified);
-fileSystem.createFileFromTemplates(programName + '/public/css/materialize.min.css', cssMinified);
+fileSystem.createFileFromTemplates(programName + '/Procfile', procFile);
 
 fileSystem.createFileFromTemplates(programName + '/package.json', JSON.stringify(package, null, 2) + '\n');
 

@@ -1,6 +1,6 @@
 {
   "name": "express-generator-ok",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Express application generator",
   "main": "index.js",
   "scripts": {

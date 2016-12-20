@@ -39,7 +39,7 @@ class FileSystem{
     static instructions(programName) {
 
         console.log("");
-        console.log("cd %s and install npm", programName.substring(2));
+        console.log("cd %s and npm install", programName.substring(2));
         console.log("");
         console.log("Run the program using node app.js");
         console.log("");
