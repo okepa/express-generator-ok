@@ -8,6 +8,7 @@
       <!-- Compiled and minified CSS -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
       <!-- Compiled and minified JavaScript -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script> 
       <title>title</title>
     </head>
@@ -24,78 +25,114 @@
                 </div>
             </nav>
         </header>
-        <section>
-            <table>
-                <thead>
-                <tr>
-                    <th data-field="id">Name</th>
-                    <th data-field="name">Item Name</th>
-                    <th data-field="price">Item Price</th>
-                </tr>
-                </thead>
+        <section style="padding-top:4%;">
+            <div class="section">
+                <div class="row container">
+                    <div class="col s12 m12 l3">
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu condimentum orci. Nunc sapien ligula, ornare vitae metus et, luctus hendrerit justo. Nam pellentesque tortor at justo vestibulum elementum. Morbi turpis lectus, faucibus nec viverra at, cursus in dolor. Suspendisse mollis molestie turpis ut luctus. Aenean vehicula mi ut dolor lacinia, quis tincidunt tellus vestibulum. Nulla eget purus sit amet dui faucibus gravida id a eros. Pellentesque ullamcorper dictum facilisis. Aliquam luctus ut eros aliquam luctus. Fusce sagittis et nisi in sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus quis diam volutpat, tempor urna vitae, faucibus turpis. Etiam vehicula ante at velit suscipit, pellentesque volutpat neque fringilla. Proin ullamcorper cursus velit, at congue nisi bibendum non.
 
-                <tbody>
-                <tr>
-                    <td>Alvin</td>
-                    <td>Eclair</td>
-                    <td>$0.87</td>
-                </tr>
-                <tr>
-                    <td>Alan</td>
-                    <td>Jellybean</td>
-                    <td>$3.76</td>
-                </tr>
-                <tr>
-                    <td>Jonathan</td>
-                    <td>Lollipop</td>
-                    <td>$7.00</td>
-                </tr>
-                </tbody>
-            </table>
+                        Praesent congue sapien suscipit dui mollis, posuere volutpat eros vestibulum. Vivamus et justo et sem tempus blandit. In hac habitasse platea dictumst. Etiam iaculis volutpat vulputate. Sed ultricies feugiat tempor. Ut in libero purus. Suspendisse potenti. Nulla facilisi.
+                        </p>
+                    </div>
+                    <div class="col s12 m12 l3">
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit metus quis viverra tristique. Aliquam ut sem auctor, eleifend lorem non, tincidunt odio. Donec aliquet dui nulla, sed malesuada ex varius in. Nam magna tellus, blandit tristique urna vitae, bibendum fringilla libero. Integer auctor bibendum magna, sagittis bibendum ligula semper eget. Praesent ornare lacinia lacinia. Fusce in neque tincidunt, malesuada eros quis, vulputate ex. Morbi cursus ullamcorper leo vel ultricies. Aliquam erat volutpat. Maecenas dapibus mauris et lorem posuere laoreet. Etiam dapibus, diam nec tempor feugiat, felis nibh finibus justo, vestibulum porta purus ipsum sed quam.
+                        </p>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis nulla eu dui lobortis, at faucibus nibh fringilla. Aenean ornare nulla in lectus porta eleifend. Morbi non volutpat odio. In pellentesque, arcu a hendrerit elementum, nisl justo accumsan magna, ut condimentum metus augue sed massa. Vivamus luctus sem quis fringilla commodo. Suspendisse lacinia tellus eu risus mollis viverra. Aliquam elementum ipsum id diam placerat blandit. Nullam non accumsan justo, lobortis posuere turpis. Nunc efficitur congue gravida. Nam sapien dolor, fermentum id venenatis vel, ullamcorper vitae justo. Maecenas imperdiet magna at urna vulputate, convallis consequat neque blandit. In accumsan ullamcorper risus, vel hendrerit neque hendrerit a.
+
+                        Quisque at ante velit. Sed tincidunt turpis at ipsum viverra aliquet. Quisque vel lorem imperdiet, efficitur quam sed, volutpat odio. Sed viverra eu nunc sit amet ornare. Vivamus vestibulum tellus et erat euismod, eu dapibus libero dapibus. Pellentesque euismod turpis et rutrum tempor. Nunc consequat ipsum nulla, quis maximus est molestie non. Integer ac convallis elit, ut ultricies nisi. Curabitur tincidunt ipsum leo, ac elementum mi condimentum et. Nulla facilisi. Aenean consectetur, ipsum vitae scelerisque aliquet, lorem dolor placerat nisi, gravida feugiat elit ante eget nisi. Donec vestibulum laoreet augue, ut tincidunt enim tincidunt a. Integer ornare sit amet diam nec lobortis. Nam venenatis purus a molestie blandit.
+
+                        Curabitur maximus sapien at sagittis vehicula. Fusce sodales orci at ornare efficitur. Vivamus suscipit eu diam laoreet volutpat. Praesent nec urna eu nibh commodo sagittis sed rhoncus sapien. Vestibulum viverra elementum felis, at aliquet quam. Curabitur eleifend ultrices maximus. Donec iaculis leo sit amet semper accumsan. Sed sit amet ipsum vitae dolor accumsan imperdiet vitae id velit. Cras suscipit felis ex, ac efficitur est iaculis eget. Proin sed volutpat orci. Morbi eu ultricies dolor.
+                        </p>
+                    </div>                                
+                </div>
+            </div>
+        </section>
+        <div class="divider"></div>    
+        <section>
+            <div class="section">
+                <div class="row container">
+                    <div class="col s12 m12 l12">
+                        <table class="responsive highlight">
+                            <thead>
+                            <tr>
+                                <th data-field="id">Name</th>
+                                <th data-field="name">Item Name</th>
+                                <th data-field="price">Item Price</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>Alvin</td>
+                                <td>Eclair</td>
+                                <td>$0.87</td>
+                            </tr>
+                            <tr>
+                                <td>Alan</td>
+                                <td>Jellybean</td>
+                                <td>$3.76</td>
+                            </tr>
+                            <tr>
+                                <td>Jonathan</td>
+                                <td>Lollipop</td>
+                                <td>$7.00</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </section>
         <div class="divider"></div>
         <section>
-            <div class="row">
-            <form class="col s12">
-                <div class="row">
-                <div class="input-field col s6">
-                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
-                </div>
-                </div>
-                <div class="row">
-                <div class="input-field col s12">
-                    <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-                    <label for="disabled">Disabled</label>
-                </div>
-                </div>
-                <div class="row">
-                <div class="input-field col s12">
-                    <input id="password" type="password" class="validate">
-                    <label for="password">Password</label>
-                </div>
-                </div>
-                <div class="row">
-                <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
-                    <label for="email">Email</label>
-                </div>
-                </div>
-                <div class="row">
-                <div class="col s12">
-                    This is an inline input field:
-                    <div class="input-field inline">
-                    <input id="email" type="email" class="validate">
-                    <label for="email" data-error="wrong" data-success="right">Email</label>
+            <div class="section">
+                <div class="row container">
+                <form class="col s12">
+                    <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
                     </div>
-                </div>
-                </div>
-            </form>
-            </div>            
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+                        <label for="disabled">Disabled</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col s12">
+                        This is an inline input field:
+                        <div class="input-field inline">
+                        <input id="email" type="email" class="validate">
+                        <label for="email" data-error="wrong" data-success="right">Email</label>
+                        </div>
+                    </div>
+                    </div>
+                </form>
+                </div>   
+            </div>         
         </section>
         <footer class="page-footer">
           <div class="container">

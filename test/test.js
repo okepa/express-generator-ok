@@ -1,0 +1,59 @@
+//require npms
+let fs = require('fs');
+let path = require('path');
+//require chai for testing
+let chai = require('chai');
+chai.use(require('chai-fs'));
+const should = chai.should();
+const expect = require('chai').expect;
+const assert = require('chai').assert;
+//require function file
+let fileSystem = require('../models/createFiles');
+
+describe("Check if folders and files are created", () => {
+    let programName = "./testFolder";
+    let route = path.join(__dirname, '..', programName);
+    let controllers = "/controllers";
+    let folderArray = ["/controllers"]; 
+    rArray = ['/controllers/indexController.js'];
+    wArray = [];
+    it("The first folder exists", (done) => {
+        fileSystem.createFolders(programName, true, '')
+            .then(() => {
+                assert.isDirectory(route,  "The directory was created");
+                done();
+            });
+    });
+    it("The rest of the folders should exist", () => {
+        fileSystem.createFolders(programName, false, folderArray)
+            .then(() => {
+                assert.isDirectory(route + controllers, "The directory was created");
+                done();
+            });
+    });
+    it("The file should be copied from the template folders", () => {
+        fileSystem.loadFileTemplate(rArray, wArray)
+        .then(() => {
+            assert.isArray(wArray, 'An array was returned');
+        });
+    });
+    it("The file should be copied from the template folder", () => {
+        fileSystem.createFileFromTemplates(programName, rArray, wArray, false)
+        .then(() => {
+            console.log("Hello");
+            console.log(route + controllers);
+            assert.isFile(route + controllers, "The file was created")
+
+        });
+    });
+    it("The file should be copied from the template folder", () => {
+        fileSystem.createFileFromTemplates(programName, programName2, dir, true)
+        .then(() => {
+
+        })
+    })
+})
+
+
+
+

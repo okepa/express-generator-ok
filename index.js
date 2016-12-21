@@ -3,7 +3,6 @@
 let program = require ('commander');
 let fs = require('fs');
 let path = require('path');
-let pkg = require('./package.json');
 //require function file
 let fileSystem = require('./models/createFiles');
 
@@ -14,24 +13,11 @@ let wArray = [];
 
 program
     .usage('<Project Name>')
-    .option('-n, --name [name]', 'Project name' )
+    .option('-n, --name <name>', 'Project name' )
     .parse(process.argv);
 
 //get the name of the directory
 let programName = './' + program.name;
-
-//Create a directory with the name of the program
-fileSystem.createFolders(programName, true);
-
-//create the express template folders
-for(let i in folderArray){
-    fileSystem.createFolders(programName, false, folderArray[i]);
-}
-
-//Get the files I want to import from the templates folder using readFileSync
-for(let i in rArray){
-    wArray[i] = fileSystem.loadFileTemplate(rArray[i]);
-}
 
 // Create the package.json
 let package = {
@@ -47,18 +33,29 @@ let package = {
     }
 }
 
-//create files using writeFileSync
-for(let i in rArray){
-    for(let j in wArray){
-        if(i == j){
-            fileSystem.createFileFromTemplates(programName + rArray[i], wArray[j]);
-        }
-    }
-}
-fileSystem.createFileFromTemplates(programName + '/package.json', JSON.stringify(package, null, 2) + '\n');
+//Create a directory with the name of the program
+fileSystem.createFolders(programName, true)
+    .then(() => {
+        //create the express template folders
+        return fileSystem.createFolders(programName, false, folderArray);
+    })
+    .then(() => {
+        //Get the files I want to import from the templates folder using readFileSync
+        return fileSystem.loadFileTemplate(rArray, wArray);
+    })
+    .then((wArray) => {
+        //create files using writeFileSync
+        return fileSystem.createFileFromTemplates(programName, rArray, wArray, false);
+    })
+    .then(() => {
+        //create json file
+        return fileSystem.createFileFromTemplates(programName, '/package.json', JSON.stringify(package, null, 2) + '\n', true);
+    })
+    .then(() => {
+        //print out instructions for what do do after ejs-o -n <name>
+        return fileSystem.instructions(programName);
+    })
 
-//print out instructions for what do do after ejs-o -n <name>
-fileSystem.instructions(programName);
 
 
 
