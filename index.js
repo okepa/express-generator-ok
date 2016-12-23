@@ -20,7 +20,7 @@ program
 let programName = './' + program.name;
 
 // Create the package.json
-let package = {
+let pkg = {
     name: programName.substring(2)
     , version: '0.0.0'
     , scripts: {   
@@ -49,7 +49,7 @@ fileSystem.createFolders(programName, true)
     })
     .then(() => {
         //create json file
-        return fileSystem.createFileFromTemplates(programName, '/package.json', JSON.stringify(package, null, 2) + '\n', true);
+        return fileSystem.createFileFromTemplates(programName, '/package.json', JSON.stringify(pkg, null, 2) + '\n', true);
     })
     .then(() => {
         //print out instructions for what do do after ejs-o -n <name>

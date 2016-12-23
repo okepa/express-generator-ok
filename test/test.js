@@ -41,7 +41,7 @@ describe("Check if folders and files are created", () => {
             done();
         });
     });
-    it("The file should be copied from the template folder", (done) => {
+    it("The file copied from teh template folder should be created", (done) => {
         fileSystem.createFileFromTemplates(programName, rArray, wArray, false)
         .then(() => {
             assert.isFile(route + rArray, "The file was created");
