@@ -1,6 +1,6 @@
 {
   "name": "express-generator-ok",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Express application generator using an ejs template",
   "keywords": [
     "express",

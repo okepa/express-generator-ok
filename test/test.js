@@ -11,12 +11,14 @@ const assert = require('chai').assert;
 let fileSystem = require('../models/createFiles');
 
 describe("Check if folders and files are created", () => {
+    
     let programName = "./testFolder";
     let route = path.join(__dirname, '..', programName);
     let controllers = "/controllers";
     let folderArray = ["/controllers"]; 
     rArray = ['/controllers/indexController.js'];
     wArray = [];
+
     it("The first folder exists", (done) => {
         fileSystem.createFolders(programName, true, '')
             .then(() => {
@@ -34,24 +36,18 @@ describe("Check if folders and files are created", () => {
     it("The file should be copied from the template folders", () => {
         fileSystem.loadFileTemplate(rArray, wArray)
         .then(() => {
+            assert.isNotNull(wArray, "The array wasn't null");
             assert.isArray(wArray, 'An array was returned');
+            done();
         });
     });
     it("The file should be copied from the template folder", () => {
         fileSystem.createFileFromTemplates(programName, rArray, wArray, false)
         .then(() => {
-            console.log("Hello");
-            console.log(route + controllers);
-            assert.isFile(route + controllers, "The file was created")
-
+            assert.isFile(route + controllers + rArray, "The file was created");
+            done();
         });
     });
-    it("The file should be copied from the template folder", () => {
-        fileSystem.createFileFromTemplates(programName, programName2, dir, true)
-        .then(() => {
-
-        })
-    })
 })
 
 
