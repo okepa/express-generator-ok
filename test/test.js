@@ -26,14 +26,14 @@ describe("Check if folders and files are created", () => {
                 done();
             });
     });
-    it("The rest of the folders should exist", () => {
+    it("The rest of the folders should exist", (done) => {
         fileSystem.createFolders(programName, false, folderArray)
             .then(() => {
                 assert.isDirectory(route + controllers, "The directory was created");
                 done();
             });
     });
-    it("The file should be copied from the template folders", () => {
+    it("The file should be copied from the template folders", (done) => {
         fileSystem.loadFileTemplate(rArray, wArray)
         .then(() => {
             assert.isNotNull(wArray, "The array wasn't null");
@@ -41,10 +41,10 @@ describe("Check if folders and files are created", () => {
             done();
         });
     });
-    it("The file should be copied from the template folder", () => {
+    it("The file should be copied from the template folder", (done) => {
         fileSystem.createFileFromTemplates(programName, rArray, wArray, false)
         .then(() => {
-            assert.isFile(route + controllers + rArray, "The file was created");
+            assert.isFile(route + rArray, "The file was created");
             done();
         });
     });
