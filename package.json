@@ -1,6 +1,6 @@
 {
   "name": "express-generator-ok",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Express application generator using an ejs template",
   "keywords": [
     "express",
@@ -9,7 +9,9 @@
     "template",
     "materlialize",
     "framework",
-    "es6"
+    "es6",
+    "rMVC",
+    "heroku"
   ],
   "repository": "okepa/express-generator-ok",
   "preferGlobal": true,

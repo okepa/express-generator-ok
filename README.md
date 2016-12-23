@@ -31,4 +31,17 @@ Run your app.js project locally at `http://localhost:3000/`:
 ```bash
 $ node app.js
 ```
-This express-generator uses an ejs template and includes the materialize framework. It also contains a Procfile if you want to upload your file to heroku.
+
+## Command Line Options
+
+This generator can also be further configured with the following command line flags.
+
+    -h, --help          output usage information
+        --version       output the version number
+    -n, --name <name>   Project name
+
+## Info
+
+The express-generator-ok generates a blank express project with a rMVC structure with blank routes.
+It uses an ejs javascript template and also includes the materialize framework. 
+It generates a Procfile if you want to deploy your project to heroku.
