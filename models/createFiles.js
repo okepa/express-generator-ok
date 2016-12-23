@@ -8,6 +8,7 @@ class FileSystem{
      *
      * @param {String} programName
      * @param {Boolean} start
+     * @param {Array} folderArray
      */
 
     static createFolders(programName, start, folderArray){
@@ -85,7 +86,7 @@ class FileSystem{
     }
 
     /**
-     * This function displays the instructions
+     * This function displays the instructions to the program
      *
      * @param {String} programName
      */

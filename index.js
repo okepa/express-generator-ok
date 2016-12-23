@@ -5,14 +5,16 @@ let fs = require('fs');
 let path = require('path');
 //require function file
 let fileSystem = require('./models/createFiles');
-
+var jsonpkg = require('./package.json');
+var version = jsonpkg.version;
 //Arrays for the folders and files
 let folderArray = ['/lib', '/routes', '/views', '/controllers', '/models', '/public', '/public/js', '/public/css', '/public/font', '/public/image'];
 let rArray = ['/app.js', '/views/index.ejs', '/controllers/indexController.js', '/routes/routes.js', '/Procfile'];
 let wArray = [];
-
+//The commands from the command line
 program
-    .usage('<Project Name>')
+    .version(version, '    --version')
+    .usage('-n <Project Name>')
     .option('-n, --name <name>', 'Project name' )
     .parse(process.argv);
 
@@ -48,7 +50,7 @@ fileSystem.createFolders(programName, true)
         return fileSystem.createFileFromTemplates(programName, rArray, wArray, false);
     })
     .then(() => {
-        //create json file
+        //create json file from the template
         return fileSystem.createFileFromTemplates(programName, '/package.json', JSON.stringify(pkg, null, 2) + '\n', true);
     })
     .then(() => {

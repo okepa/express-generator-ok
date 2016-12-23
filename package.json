@@ -1,15 +1,18 @@
 {
   "name": "express-generator-ok",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Express application generator using an ejs template",
   "keywords": [
     "express",
     "generator",
     "ejs",
+    "template",
     "materlialize",
+    "framework",
     "es6"
   ],
   "repository": "okepa/express-generator-ok",
+  "preferGlobal": true,
   "main": "index.js",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha"
