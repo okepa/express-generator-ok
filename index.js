@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 //require npms
-let program = require ('commander');
-let fs = require('fs');
-let path = require('path');
+const program = require ('commander');
+const fs = require('fs');
+const path = require('path');
 //require function file
-let fileSystem = require('./models/createFiles');
-var jsonpkg = require('./package.json');
-var version = jsonpkg.version;
+const fileSystem = require('./models/createFiles');
+const jsonpkg = require('./package.json');
+let version = jsonpkg.version;
 //Arrays for the folders and files
-let folderArray = ['/lib', '/routes', '/views', '/controllers', '/models', '/public', '/public/js', '/public/css', '/public/font', '/public/image'];
-let rArray = ['/app.js', '/views/index.ejs', '/controllers/indexController.js', '/routes/routes.js', '/Procfile'];
+const folderArray = ['/lib', '/routes', '/views', '/controllers', '/models', '/public', '/public/js', '/public/css', '/public/font', '/public/image'];
+const rArray = ['/app.js', '/views/index.ejs', '/controllers/indexController.js', '/routes/routes.js', '/Procfile'];
 let wArray = [];
 //The commands from the command line
 program
